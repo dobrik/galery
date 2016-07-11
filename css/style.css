@@ -1,0 +1,7 @@
+.row>div>img{
+    width: 250px;
+    height: auto;
+}
+.row>div{
+    padding-bottom: 35px;
+}

@@ -1,10 +1,5 @@
 <?php
 require 'upload.php';
-
-//$_SESSION['name'] = 'Vasya';
-echo $_SESSION['name'] . '<br>';
-
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,6 +8,7 @@ echo $_SESSION['name'] . '<br>';
     <title>Include</title>
     <link rel="stylesheet" href="css/bootstrap-theme.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <form action="?" method="post" enctype="multipart/form-data">
@@ -21,13 +17,16 @@ echo $_SESSION['name'] . '<br>';
 </form>
 
 <div class="container">
+    <?php
+    uploadImage($_FILES['img'],$dir);
+    ?>
     <div class="row">
-        <?php
-        uploadImage($_FILES['img']);
-        ?>
+    <?php
+    getImages($dir);
+?>
     </div>
 </div>
-<script src="js/bootstrap.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
