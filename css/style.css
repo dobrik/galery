@@ -4,4 +4,5 @@
 }
 .row>div{
     padding-bottom: 35px;
+    min-height: 230px;
 }

@@ -22,18 +22,9 @@ function uploadImage($files, $dir)
         }
     }
 }
-function validExtension($fileName){
-    $valid = ['jpg','jpeg','png','gif'];
-    $typeArr = explode('.', $fileName);
-    $type = $typeArr[count($typeArr) - 1];
-    return in_array($type, $valid);
-}
 function getImages($dir){
-    foreach(scandir($dir) as $img){
-        if(validExtension($img)){
-            echo "<div class='col-md-3'><img src=\"{$dir}{$img}\"></div>";
-        }
-
+    foreach(glob($dir.'*.{jpg, png, gif, jpeg}', GLOB_BRACE) as $img){
+            echo "<div class='col-md-3'><img src=\"{$img}\"></div>";
     }
 }
 function validImg($type)
