@@ -11,7 +11,7 @@ var sendAndGet = function () {
         contentType: false,
         processData: false,
         success: function (e) {
-            $('#showImg').append(e);
+            $('#showImg').html(e);
             //console.log(e);
         }
 
