@@ -1,7 +1,13 @@
 <?php
-//session_start(['cookie_lifetime' => 86400, 'gc_maxlifetime' => 86400]);
-//var_dump(scandir('images'));
+
 $dir = 'images/';
+
+function imgResize($img, $width, $height)
+{
+    $img = fopen($img, 'r');
+    $size = getimagesize($img);
+
+}
 
 function hashName($name)
 {
@@ -31,4 +37,9 @@ function validImg($type)
 {
     $validFormats = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
     return in_array($type, $validFormats);
+}
+
+if (!empty($_FILES['img']) || !empty($_POST['getImg'])) {
+    uploadImage($_FILES['img'], $dir);
+    getImages($dir);
 }
