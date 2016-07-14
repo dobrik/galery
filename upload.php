@@ -46,7 +46,7 @@ function validImg($type)
 }
 
 if(!empty($_POST['remove'])){
-    unlink($dir.cutAdress($_POST['remove']));
+    unlink($dir.$_POST['remove']);
 }
 if (!empty($_FILES['img']) || !empty($_POST['getImg'])) {
     uploadImage($_FILES['img'], $dir);

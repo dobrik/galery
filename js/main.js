@@ -15,11 +15,12 @@ var sendAndGet = function () {
             $('#file').val('');
             var btn = $('.imgRem');
             btn.click(function(e){
-                console.log(e.currentTarget.previousElementSibling.src);
+                var fileArr = e.currentTarget.previousElementSibling.src.split('/');
+                var fileName = fileArr[fileArr.length-1];
                 $.ajax({
                     url: 'upload.php',
                     type:'POST',
-                    data:{remove: e.currentTarget.previousElementSibling.src, getImg: true},
+                    data:{remove: fileName, getImg: true},
                     success: function(){
                         sendAndGet();
                     }
