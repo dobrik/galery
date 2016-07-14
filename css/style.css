@@ -6,3 +6,14 @@
     padding-bottom: 35px;
     min-height: 230px;
 }
+.imgRem{
+    position: absolute;
+    right: 28px;
+    top: -10px;
+    font-size: 25px;
+    font-weight: 900;
+}
+.imgRem:hover{
+    color: #f97d00;
+    cursor: pointer;
+}

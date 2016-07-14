@@ -12,18 +12,17 @@ require 'upload.php';
 </head>
 <body>
 <form name="imgForm">
-    <input type="file" name="img[]" multiple>
+    <input type="file" id="file" name="img[]" multiple>
     <input type="button" id="sendImg" value="send">
 </form>
 
 <div class="container">
     <div class="row" id="showImg">
-
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="js/jquery-3.0.0.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/jquery-3.0.0.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

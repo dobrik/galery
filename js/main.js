@@ -12,10 +12,24 @@ var sendAndGet = function () {
         processData: false,
         success: function (e) {
             $('#showImg').html(e);
-            //console.log(e);
+            $('#file').val('');
+            var btn = $('.imgRem');
+            btn.click(function(e){
+                console.log(e.currentTarget.previousElementSibling.src);
+                $.ajax({
+                    url: 'upload.php',
+                    type:'POST',
+                    data:{remove: e.currentTarget.previousElementSibling.src, getImg: true},
+                    success: function(){
+                        sendAndGet();
+                    }
+                })
+            })
         }
 
     })
 };
 $(document).ready(sendAndGet);
 $('#sendImg').click(sendAndGet);
+
+
