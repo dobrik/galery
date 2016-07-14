@@ -14,6 +14,12 @@ var sendAndGet = function () {
             $('#showImg').html(e);
             $('#file').val('');
             var btn = $('.imgRem');
+            $('#showImg>.col-md-3').mouseover(function(){
+                $(this).find('.imgRem').show();
+            });
+            $('#showImg>.col-md-3').mouseout(function(){
+                $(this).find('.imgRem').hide();
+            });
             btn.click(function(e){
                $(this).parent().hide('slow');
                 var fileArr = e.currentTarget.previousElementSibling.src.split('/');
