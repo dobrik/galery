@@ -15,6 +15,7 @@ var sendAndGet = function () {
             $('#file').val('');
             var btn = $('.imgRem');
             btn.click(function(e){
+               $(this).parent().hide('slow');
                 var fileArr = e.currentTarget.previousElementSibling.src.split('/');
                 var fileName = fileArr[fileArr.length-1];
                 $.ajax({
@@ -22,7 +23,9 @@ var sendAndGet = function () {
                     type:'POST',
                     data:{remove: fileName, getImg: true},
                     success: function(){
+                        setTimeout(function(){
                         sendAndGet();
+                        },1000)
                     }
                 })
             })
